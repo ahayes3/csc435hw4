@@ -1,0 +1,14 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.4.30'
+}
+
+repositories {
+    mavenCentral()
+}
+dependencies {
+
+
+    // https://mvnrepository.com/artifact/com.sparkjava/spark-kotlin
+    implementation group: 'com.sparkjava', name: 'spark-kotlin', version: '1.0.0-alpha'
+
+}
