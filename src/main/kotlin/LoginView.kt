@@ -1,5 +1,7 @@
+import spark.Response
+
 object LoginView {
-    fun respond() {
-        println("RESPONSE")
+    fun respond(resp: Response, message:String) {
+        resp.body("{\"message\": \"$message\"")
     }
 }

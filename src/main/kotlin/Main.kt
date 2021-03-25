@@ -1,6 +1,7 @@
 import spark.Request
 import spark.Response
 import spark.Spark.*
+import java.util.*
 
 fun main(args: Array<String>) {
     port(9081)
@@ -16,24 +17,34 @@ fun main(args: Array<String>) {
 
 }
 
-fun loginPost(req: Request, res:Response) {
+fun loginPost(req: Request, resp:Response) {
 
 }
-fun loginPut(req:Request, res:Response) {
+fun loginPut(req:Request, resp:Response) {
 
 }
-fun charactersGetId(req:Request,res:Response,id:String) {
-
+fun charactersGetId(req:Request,resp:Response,id:String) {
+    checkUUID(id)
+    CharacterController.getId(req,resp,UUID.fromString(id))
 }
-fun charactersGet(req:Request,res:Response) {
-
+fun charactersGet(req:Request,resp:Response) {
+    CharacterController.get(req,resp)
 }
-fun charactersPost(req:Request,res:Response) {
-
+fun charactersPost(req:Request,resp:Response) {
+    CharacterController.post(req,resp)
 }
-fun charactersPut(req:Request,res:Response,id:String) {
-
+fun charactersPut(req:Request,resp:Response,id:String) {
+    checkUUID(id)
+    CharacterController.put(req,resp, UUID.fromString(id))
 }
-fun charactersDelete(req:Request,res:Response,id:String) {
-
+fun charactersDelete(req:Request,resp:Response,id:String) {
+    checkUUID(id)
+    CharacterController.delete(req,resp,UUID.fromString(id))
+}
+private fun checkUUID(id:String) {
+    if(!id.matches("[0-9a-fA-F]{8}-[0-9a-fA-F]{8}-[0-9a-fA-F]{8}-[0-9a-fA-F]{8}".toRegex()))
+        notFound {req,resp ->
+            resp.type("application.json")
+            "{\"message\": \"404 Error, id: $id not found\"}"
+        }
 }
