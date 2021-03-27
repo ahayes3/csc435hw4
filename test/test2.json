@@ -1,0 +1,44 @@
+{
+  "character": {
+    "name": "JEB",
+    "background": "Thief",
+    "race": "Elf",
+    "languages": "Common, Elvish",
+    "str": 10,
+    "dex": 11,
+    "con": 12,
+    "wis": 13,
+    "intel": 14,
+    "cha": 15,
+    "ac": 14,
+    "init": 0,
+    "speed": 30,
+    "maxHp": 27,
+    "features": [
+      "Sneak Attack",
+      "Disengage"
+    ],
+    "tools": [
+      "Thieves' tools"
+    ],
+    "skills": [
+      "Stealth",
+      "Persuasion",
+      "Sleight of Hand"
+    ],
+    "items": [
+      "Dagger",
+      "Spoon"
+    ],
+    "classes": [
+      {
+        "name": "rogue",
+        "level": 1
+      },
+      {
+        "name": "wizard",
+        "level": 1
+      }
+    ]
+  }
+}

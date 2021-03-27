@@ -12,7 +12,9 @@ dependencies {
     // https://mvnrepository.com/artifact/com.sparkjava/spark-kotlin
     implementation group: 'com.sparkjava', name: 'spark-kotlin', version: '1.0.0-alpha'
     implementation 'com.google.code.gson:gson:2.8.6'
+    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.23'
+
 }
 application {
-    mainClass = 'Main'
+    mainClass = 'MainKt'
 }
